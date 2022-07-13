@@ -13,3 +13,4 @@ function validarFormsHeader(e) {
   }
 }
 buttonHeader.addEventListener('click', validarFormsHeader);
+

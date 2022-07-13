@@ -12,3 +12,12 @@ body {
 .trybewarts-login {
   display: flex;
 }
+
+#container-main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px;
+}

@@ -19,5 +19,6 @@ body {
 
 #evaluation-form {
   display: flex;
+  flex-direction: column;
   width: 675px;
 }

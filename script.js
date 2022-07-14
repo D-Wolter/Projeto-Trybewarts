@@ -1,6 +1,8 @@
 const buttonHeader = document.getElementById('button-header');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
+const btn = document.getElementById('submit-btn')
+const agreement = document.getElementById('agreement')
 
 function validarFormsHeader(e) {
   e.preventDefault();
@@ -13,3 +15,11 @@ function validarFormsHeader(e) {
   }
 }
 buttonHeader.addEventListener('click', validarFormsHeader);
+
+agreement.addEventListener('click', concorda)
+
+function concorda () {
+  if (agreement.value === 'on') {
+    
+  }
+}

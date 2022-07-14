@@ -3,6 +3,9 @@ const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const btn = document.getElementById('submit-btn');
 const agreement = document.getElementById('agreement');
+const textLen = document.getElementById('textarea');
+const cont = document.getElementById('counter');
+cont.innerHTML = 500;
 
 function validarFormsHeader(e) {
   e.preventDefault();
@@ -25,3 +28,9 @@ function activeB() {
 }
 
 agreement.addEventListener('click', activeB);
+
+function refresh() {
+  cont.innerHTML = 500 - textLen.value.length;
+}
+
+textLen.addEventListener('keyup', refresh);

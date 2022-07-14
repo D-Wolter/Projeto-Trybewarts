@@ -16,14 +16,12 @@ function validarFormsHeader(e) {
 }
 buttonHeader.addEventListener('click', validarFormsHeader);
 
-
-agreement.addEventListener('click', activeB);
-
-function activeB () {
+function activeB() {
   if (agreement.checked === true) {
     btn.removeAttribute('disabled');
   } else {
-    btn.setAttribute('disabled', '')
+    btn.setAttribute('disabled', '');
   }
 }
 
+agreement.addEventListener('click', activeB);

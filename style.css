@@ -6,7 +6,30 @@ body {
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
   background-color: rgb(50, 167, 145);
+}
+
+#trybewarts-header-title {
+  color: white;
+}
+
+.trybewarts-header-logo {
+  height: 50px;
+}
+
+#nome-sobrenome {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+
+#email-casa {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
 }
 
 .trybewarts-login {
@@ -20,6 +43,7 @@ body {
 #evaluation-form {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 675px;
 }
 
@@ -31,3 +55,4 @@ body {
   display: flex;
   flex-direction: column;
 }
+

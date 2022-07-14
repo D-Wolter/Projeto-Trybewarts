@@ -1,8 +1,8 @@
 const buttonHeader = document.getElementById('button-header');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
-const btn = document.getElementById('submit-btn')
-const agreement = document.getElementById('agreement')
+const btn = document.getElementById('submit-btn');
+const agreement = document.getElementById('agreement');
 
 function validarFormsHeader(e) {
   e.preventDefault();
@@ -16,13 +16,13 @@ function validarFormsHeader(e) {
 }
 buttonHeader.addEventListener('click', validarFormsHeader);
 
-agreement.addEventListener('click', concorda)
-
-function concorda () {
+window.onload = function atribuirDisable() {
+  btn.setAttribute('disable', 'true');
+};
+function concorda(e) {
+  e.preventDefault();
   if (agreement.value === 'on') {
-    btn.innerHTML = '<button id="submit-btn" type="submit">Enviar</button>'
-  } 
-  if (agreement.value === '') {
-    btn.innerHTML = '<button disabled id="submit-btn" type="submit">Enviar</button>'
+    btn.setAttribute('enable', 'enable');
   }
 }
+btn.addEventListener('click',concorda);

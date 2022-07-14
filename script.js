@@ -16,13 +16,14 @@ function validarFormsHeader(e) {
 }
 buttonHeader.addEventListener('click', validarFormsHeader);
 
-window.onload = function atribuirDisable() {
-  btn.setAttribute('disable', 'true');
-};
-function concorda(e) {
-  e.preventDefault();
-  if (agreement.value === 'on') {
-    btn.setAttribute('enable', 'enable');
+
+agreement.addEventListener('click', activeB);
+
+function activeB () {
+  if (agreement.checked === true) {
+    btn.removeAttribute('disabled');
+  } else {
+    btn.setAttribute('disabled', '')
   }
 }
-btn.addEventListener('click', concorda);
+

@@ -25,4 +25,4 @@ function concorda(e) {
     btn.setAttribute('enable', 'enable');
   }
 }
-btn.addEventListener('click',concorda);
+btn.addEventListener('click', concorda);

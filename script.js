@@ -20,6 +20,9 @@ agreement.addEventListener('click', concorda)
 
 function concorda () {
   if (agreement.value === 'on') {
-    
+    btn.innerHTML = '<button id="submit-btn" type="submit">Enviar</button>'
+  } 
+  if (agreement.value === '') {
+    btn.innerHTML = '<button disabled id="submit-btn" type="submit">Enviar</button>'
   }
 }

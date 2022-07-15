@@ -1,4 +1,4 @@
-let evaluationForm = document.querySelector('#evaluation-form')
+const evaluationForm = document.querySelector('#evaluation-form');
 const buttonHeader = document.getElementById('button-header');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
@@ -50,38 +50,30 @@ const lang4 = document.getElementById('react');
 const lang5 = document.getElementById('sql');
 const lang6 = document.getElementById('python');
 const nota = document.getElementsByName('rate');
-const coment = document.querySelector('#textarea');
+const userComent = document.querySelector('#textarea');
 
-let userNome = ''
-let userEmail = ''
-let userCasa = ''
-let userFamily = ''
-let materias = []
-let userNota = nota.value
-let userCom = coment.
+let userNome = '';
+let userEmail = '';
+let userCasa = '';
+let userFamily = '';
+let materias = [];
+let userNota = nota.value;
 
-function makeForm (form) {
-  const formulario = document.getElementById('form-data');
-  const newForm = document.createElement('p')
-  newForm.innerText = form
-  formulario.appendChild(newForm)
-  evaluationForm.innerHTML = ''
-  evaluationForm.classList.add('oculto')
-}
 
-function captureForm (e) {
-  e.preventDefault()
+
+
+function captureForm(e) {
+  e.preventDefault();
 
   if (familia1.checked === true) {
     userFamily = familia1.value;
-  } 
+  }
   if (familia2.checked === true) {
     userFamily = familia2.value;
-  } 
+  }
   if (familia3.checked === true) {
     userFamily = familia3.value;
   }
-
 
   if (lang1.checked === true) {
     materias.push(lang1.value);
@@ -104,29 +96,26 @@ function captureForm (e) {
   for (v of nota) {
     if (v.checked === true) {
       userNota = v.value;
-      
     }
   }
-  
 
-  userNome = `Nome: ${nome.value} ${sobrenome.value}`
-  userEmail = `Email: ${eMail.value}`
-  userCasa = `Casa: ${casa}`
-  userFamily = `Família: ${userFamily}` 
-  materias = `Matérias: ${materias}`   
-  userNota = `Avaliação: ${userNota}`
-  
+  userNome = `${nome.value} ${sobrenome.value}`;
+  userEmail = `${eMail.value}`;
+  userCasa = `${casa}`;
+  userFamily = `${userFamily}`;
+  materias = `${materias}`;
+  userNota = `${userNota}`;
 
-  console.log(userNome);
-  console.log(userEmail);
-  console.log(userCasa);
-  console.log(userFamily);
-  console.log(materias);
-  console.log(userNota);
-  console.log(userCom);
+  const resumo = [`Nome: ${userNome}`, `Email: ${userEmail}`, `Casa: ${userCasa}`, `Família: ${userFamily}`,
+    `Matérias: ${materias}`, `Avaliação: ${userNota}`, `Observações: ${userComent.value}`];
 
+  for (let index = 0; index < 7; index += 1) {
+    const formulario = document.getElementById('form-data');
+    const newTag = document.createElement('li');
+    newTag.innerText = resumo[index];
+    formulario.appendChild(newTag);
+    evaluationForm.style.display = 'none';
+  }
 }
 
-
-
-btn.addEventListener('click', captureForm)
+btn.addEventListener('click', captureForm);

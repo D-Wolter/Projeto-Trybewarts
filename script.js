@@ -1,3 +1,4 @@
+let evaluationForm = document.querySelector('#evaluation-form')
 const buttonHeader = document.getElementById('button-header');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
@@ -48,49 +49,84 @@ const lang3 = document.getElementById('promises');
 const lang4 = document.getElementById('react');
 const lang5 = document.getElementById('sql');
 const lang6 = document.getElementById('python');
-const n1 = document.getElementsByName('rate');
+const nota = document.getElementsByName('rate');
+const coment = document.querySelector('#textarea');
 
-function makeForm (e) {
+let userNome = ''
+let userEmail = ''
+let userCasa = ''
+let userFamily = ''
+let materias = []
+let userNota = nota.value
+let userCom = coment.
+
+function makeForm (form) {
+  const formulario = document.getElementById('form-data');
+  const newForm = document.createElement('p')
+  newForm.innerText = form
+  formulario.appendChild(newForm)
+  evaluationForm.innerHTML = ''
+  evaluationForm.classList.add('oculto')
+}
+
+function captureForm (e) {
   e.preventDefault()
-  console.log(nome.value)
-  console.log(sobrenome.value)
-  console.log(eMail.value)
-  console.log(casa);
 
-  //tratar qual dos trez e verdadeiro
   if (familia1.checked === true) {
-    console.log(familia1.value);
+    userFamily = familia1.value;
   } 
   if (familia2.checked === true) {
-    console.log(familia2.value);
+    userFamily = familia2.value;
   } 
   if (familia3.checked === true) {
-    console.log(familia3.value);
+    userFamily = familia3.value;
   }
+
+
   if (lang1.checked === true) {
-    console.log(lang1.value);
+    materias.push(lang1.value);
   }
   if (lang2.checked === true) {
-    console.log(lang2.value);
+    materias.push(lang2.value);
   }
   if (lang3.checked === true) {
-    console.log(lang3.value);
+    materias.push(lang3.value);
   }
   if (lang4.checked === true) {
-    console.log(lang4.value);
+    materias.push(lang4.value);
   }
   if (lang5.checked === true) {
-    console.log(lang5.value);
+    materias.push(lang5.value);
   }
   if (lang6.checked === true) {
-    console.log(lang6.value);
+    materias.push(lang6.value);
   }
-  for (v of n1) {
+  for (v of nota) {
     if (v.checked === true) {
-      console.log(v.value.id);
+      userNota = v.value;
+      
     }
   }
   
+
+  userNome = `Nome: ${nome.value} ${sobrenome.value}`
+  userEmail = `Email: ${eMail.value}`
+  userCasa = `Casa: ${casa}`
+  userFamily = `Família: ${userFamily}` 
+  materias = `Matérias: ${materias}`   
+  userNota = `Avaliação: ${userNota}`
+  
+
+  console.log(userNome);
+  console.log(userEmail);
+  console.log(userCasa);
+  console.log(userFamily);
+  console.log(materias);
+  console.log(userNota);
+  console.log(userCom);
+
 }
 
-btn.addEventListener('click', makeForm)
+
+
+btn.addEventListener('click', captureForm)

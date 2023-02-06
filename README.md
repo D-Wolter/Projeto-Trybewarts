@@ -11,7 +11,7 @@
   * Trabalhar em equipe resolvendo conflitos no github;
   
   
-  <img src="./images/pagina-principal.png" alt="Pixels art" />
+  <img src="./Screenshot_351.png" alt="Pixels art" />
   
   ## Iniciar
 
